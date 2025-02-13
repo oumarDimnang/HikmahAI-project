@@ -1,23 +1,25 @@
-import daisyui from 'daisyui';
+import daisyui from "daisyui";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans], // Montserrat for headings
+        atkinson: ["Atkinson Hyperlegible", ...defaultTheme.fontFamily.sans], // Atkinson for body text
+        robotoMono: ["Roboto Mono", ...defaultTheme.fontFamily.mono], // Roboto Mono for code/monospace
+        firaCode: ["Fira Code", ...defaultTheme.fontFamily.mono], // Fira Code for code/monospace
+        barriecito: ["Barriecito", ...defaultTheme.fontFamily.mono],
+      },
+    },
   },
   plugins: [daisyui],
   daisyui: {
     themes: [
       "light",
       "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
       "synthwave",
       "retro",
       "cyberpunk",
@@ -26,24 +28,16 @@ export default {
       "garden",
       "forest",
       "aqua",
-      "lofi",
-      "pastel",
-      "fantasy",
-      "wireframe",
       "black",
-      "luxury",
       "dracula",
       "cmyk",
       "autumn",
-      "business",
-      "acid",
       "lemonade",
       "night",
       "coffee",
-      "winter",
       "dim",
       "nord",
       "sunset",
     ],
   },
-}
+};
